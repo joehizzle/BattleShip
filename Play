@@ -1,0 +1,46 @@
+cast
+
+human        The human player
+opponent	 The computer controlled opponent
+manager      The controller
+Organizer    In charge of setting up the game
+artist       Displays everything
+clerk        In charge of storing things
+
+
+ 
+
+Dialog:
+
+human->manager:I would like to play a game
+manager-> artist:Querry human(name)
+artist-> human:What is your name?
+human-> manager:My name is player1
+manager-> clerk:Give me info on (player1)
+clerk-> manager:info
+manager-> artist:Display_and_querry(info,Where_would_you_like_to_place_your_ships_?)
+human-> manager:Location of ships
+manager-> Organizer:prepare_game
+Organizer-> manager:game
+manager-> artist:Display(game)
+human-> manager:Starting Game
+human->manager:(A,5)
+manager-> Organizer:Check opponent spot (A,5) for ship
+Organizer-> manager:Miss
+manager-> artist:display opponent spot (A,5) Miss
+manager-> clerk:store opponent spot (A,5) Miss
+manager-> artist:display opponent's turn
+opponent-> manager:(B,7)
+manager-> Organizer:Check human spot (B,7) for ship
+Organizer-> manager:Hit
+manager-> artist:display human spot (B,7)hit
+manager-> clerk:store human spot (B,7) hit
+manager-> artist:dispay human's turn
+
+
+** This story continues until all the ships are found **
+
+
+Organizer-> manager:all opponent's ships have been hit
+manager-> artist:Display(Congratulations you sunk all the ships)
+artist-> human:"Congratulations you sunk all the ships"
